@@ -1,10 +1,13 @@
 import React from 'react';
 import './Sidebar.css';
+import User from './User';
 
-const Sidebar = () => {
+const Sidebar = ({ contacts }) => {
   return(
     <aside className="Sidebar">
-      Sidebar Component
+        {
+          contacts.map(contact=><User user={contact} key={contact.user_id}/>)
+        }
     </aside>
   );
 };

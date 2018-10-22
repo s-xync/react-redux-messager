@@ -1,7 +1,7 @@
 import React from 'react';
 import './Main.css'
 import Empty from './Empty';
-import ChatWindow from './ChatWindow';
+import ChatWindow from '../containers/ChatWindow';
 
 const Main = ({ user, activeUserId }) => {
   const renderMainComponent = () => {
@@ -10,7 +10,7 @@ const Main = ({ user, activeUserId }) => {
     }else{
       return <ChatWindow activeUserId={activeUserId}/>
     }
-  }
+  };
 
   return(
     <main className="Main">

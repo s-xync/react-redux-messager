@@ -1,9 +1,20 @@
 import React from 'react';
 import './Main.css'
-const Main = () => {
+import Empty from './Empty';
+import ChatWindow from './ChatWindow';
+
+const Main = ({ user, activeUserId }) => {
+  const renderMainComponent = () => {
+    if(!activeUserId){
+      return <Empty user={user}/>
+    }else{
+      return <ChatWindow activeUserId={activeUserId}/>
+    }
+  }
+
   return(
     <main className="Main">
-      Main Component
+    {renderMainComponent()}
     </main>
   );
 };
